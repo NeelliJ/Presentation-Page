@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC>
+<html lang="en">
+<head>
+<title>Nellie Johnsson</title>
+<meta charset="utf-8" />
+<meta name="author" content="Nellie Johnsson" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Lato:300,400,700,900&amp;display=swap" rel="stylesheet" />
+</head>
+<body class="processPage">
+<div class="wrapper">
+<header class="header">
+<h1><a class="logo" href="index.html">Nellie Johnsson</a></h1>
+<nav class="nav">
+<ul>
+<li class="nav__list"><a class="nav__link" href="index.html">Start</a></li>
+<li class="nav__list"><a class="nav__link--current nav__link" href="uppsats.html">Processanalys</a></li>
+<li class="nav__list"><a class="nav__link" href="#">Galleri</a></li>
+</ul>
+</nav>
+</header>
+<main>
+<div class="text-pic text-pic--article">
+<img srcset="../bilder/stsci-h-p1922a-m-1000t.jpg 1000w, ../bilder/stsci-h-p1922a-m-2000t.jpg 2000w" sizes="(min-width:1150px) 72vw, (max-width:1150px) 77.6vw" alt="Asteroid med kometliknande svans" />
+<h2 class="article-headline">Hur min kod ser ut &amp; varför den ser ut som den gör</h2>
+</div>
+<aside class="article-details">
+<ul>
+<li class="article-details__list">Processanalys</li>
+<li class="article-details__list">Examinationsuppgift</li>
+<li class="article-details__list">WUH 100</li>
+<li class="article-details__list">Vt 2020</li>
+</ul>
+</aside>
+<div class="article-body">
+<p class="dropCap article-body__text">Något jag upplever som bland det enklaste men samtidigt det svåraste med webbkodning är att bygga en bra struktur i html och att nå elementen på smidigaste sätt för att stila upp i css-dokumentet. Till viss del är det inte särskilt svårt. Head-taggen inleder alltid direkt efter html-taggen. Uppdelningen i den efterföljande body-taggen är logisk. Header för inledande information såsom navigationsmeny, sidans namn/logga etc., footer som en avslutning med info om sidan, t.ex. om dess skapare, copyright, kontaktuppgifter, och emellan sidans huvudsakliga innehåll i main (developer.mozilla.org; Tonon, 2019). Som en bok, eller uppsats, eller film. Om vi sedan zoomar in och praktiskt behöver åstadkomma ett visst utseende, blir det emellertid mer komplext.</p>
+<h3>Semantik och funktion</h3>
+<p class="article-body__text">Jag har utgått från ett fåtal principer under kodningen. De utgår främst från riktlinjer kring semantisk och enkel kod, anpassa elementen efter innehåll, undvika onödiga extra-taggar, ge tydliga klassnamn baserade på funktion snarare än specifikt utseende (Bernhardsson, 2014). Då jag har skrivit i xhtml strict, har det blivit lite svårare då jag tvingats använda div och lägga på en klass eller id för viktiga delar av strukturen. Detta är inte idealt (Coyier, 2013) men då semantiska element som main, footer, article och section dök upp först i html5 gick det inte på annat sätt.</p>
+<p class="article-body__text">Ett exempel på ett semantiskt huvudbry jag har haft är headerns innehåll. Jag hade tänkt mig att kombinera en logotyp tillsammans med en sidnavigation i ett band överst på sidan, vilket på startsidan skulle följas av en banner. Det kändes inte självklart var bannern passade bäst - i headern eller efter den. Bannerns syfte är att vara ett estetiskt ‘Välkommen’-budskap, det är något som inte är nödvändigt för sidan men är tänkt lite som en reklampelare som ska ge uppmärksamhet snabbt och dra in besökaren. Dessa kvaliteter skulle kunna passa in i headern om vi alltså tänker på den som en inledare. Å andra sidan kan det också ses som innehåll, det har ingen specifik funktion som krävs för att besökaren ska kunna ta till sig sidan.</p>
+<p class="article-body__text">Slutligen valde jag att lägga bannern utanför headern. Jag ville att bandet med navigation och logga skulle göra vissa saker, som att stanna kvar i fönstrets ovansida vid scrollning på framsidan, samt vara halvgenomskinligt. Detta medan bannern skulle göra andra saker, som att endast synas på framsidan. Fastän det kanske hade funkat att ha bannern i headern kändes det mer naturligt att dela upp dem, sett till stilningen.</p>
+<p class="article-body__text">Vad jag inte tänkte på var huruvida navigationen skulle ligga i headern eller inte. På det sättet jag ville ha utseendet tror jag att det hade varit lite mer omständligt att lägga navigationen för sig, men måhända skulle vissa utvecklare ha föredragit det. Enligt MDN web docs råder det delade meningar här (2020). Att själv avgöra vad som är bäst, har såhär i början bidragit med viss förvirring för mig.</p>
+<h3>Layouten</h3>
+<p class="article-body__text">En annan knepig del har varit att få ihop layouten på ett bra sätt. Jag har förstått nu att flexbox och grids är ett enklare, bättre anpassat sätt att göra sin webblayout med (Andrew, 2018). Då floats är den metod vi främst har använt i kursen, ville jag dock försöka få till det med floats. Den föreslagna grundlayouten för uppgiften är inte särskilt komplicerad, men dess kollapsande i minskad skärmstorlek, där den mellersta av tre från början horisontellt uppradade textboxar ska hamna överst, är för mig ett tydligt exempel för hur floats kan vara knepigt. Det finns säkert smidigare lösningar än den jag kom fram till, men även en sådan är svårare än att jobba med flexbox/grids där det inte är knepigare än att ange nummerordning för hur elementen ska lägga sig i relation till varandra (Ohlsson, 2019).</p>
+<p class="article-body__text">För att lyckas med floats delade jag in de första två av de tre elementen i en egen grupp. Semantiskt hade jag redan gjort den här uppdelningen då jag valt att göra det tredje elementet till en sidebar av rent visuella och kommunikativa skäl (jag tycker att tre spalter i samma bredd och på samma höjd med var sitt innehåll lätt känns som lite mycket visuell likhet för längre texter på olika ämnen). Jag behövde dock omsluta de två första elementen i en egen div-tagg för att få till min lösning, som baserades på att mitten-elementet är det första av textboxarna i html-dokumentet så att det i mindre skärmupplösningar naturligt kommer överst. Medan jag kan höger- och vänsterställa två element med float så att det när de står sida vid sida verkar som att den högerställda boxen är den sista i ordningen, fastän det lika väl kan vara den första, så går det inte så lätt med tre element.</p>
+<p class="article-body__text">För övrigt har jag använt tre olika brytpunkter för att anpassa designen efter storlek. En mer komplex webbplats skulle kanske behöva fler brytpunkter. Då vore det bra att ha koll på vanliga skärmstorlekar från stora stationära datorer till mindre smartphones (w3schools.com). Här har jag nöjt mig med att se efter kring vilka storlekar som designen börjar brista. Hade jag varit lite mer noggrann med utseendet hade jag dock kunnat jobba med ytterligare en brytpunkt även i det här projektet, den minsta ligger nu på 700px, men för ett snyggare resultat skulle det kunna ökas med kanske 50-100 pixlar, medan en fjärde brytpunkt kring 600px då kunde ta hand om mobilanpassade stilar.</p>
+<blockquote>
+<p class="pull-quote">...en distinktion som görs mellan q-taggen och blockquote, är att blockquote ska vara ett längre citat</p>
+</blockquote>
+<h3>Texten</h3>
+<p class="article-body__text">Några av de första html-element jag lärde mig är p-taggen och h1-h6. Liksom andra vanliga taggar för textinnehåll som li och blockquoute kan de användas i xhtml såväl som html5. Jag har inte tänkt på element för textinnehåll som särskilt svåra, i arbetet med examinationsuppgiften har det emellertid dykt upp ett par frågetecken.
+Ska t.ex. h1 vara webbplatsens namn eller borde den specifika sidans rubrik vara det? Nu när webbplatsen är ganska liten tycker jag att titeln funkar bra som h1, medan en mycket mer omfattande webbplats hellre kunde ha namnet som logo med en finjusterad bildfil.</p>
+<p class="article-body__text">Förstasidan har en kort mening som ligger ovanpå bannern. Jag tänkte länge på den som en blockquote-tagg, för att jag tycker den känns som en pratbubbla eller ett citat. Nu är det inget citat utan mer som en liten reklamtext som tjänar samma syfte som bannern. Lennartz (2008) ger ett exempel på ett liknande fall där en sajtbeskrivning gjorts som blockquote, vilket är fel då det helt enkelt inte är ett citat. Hade texten varit mycket viktig och borde synas i sökresultaten på t.ex. Google, kanske jag borde ha satt den som h1 istället för sidans titel, alt. som h2, eller åtminstone lagt en em-tagg runt den. Då jag tycker att den är en sidogrej som inte är nödvändig och dessutom skiljer sig från övriga rubriktyper på sidan, valde jag att lägga den i en p-tagg istället.</p>
+<p class="article-body__text">Footer-rubrikerna känns också som att de står för sig själva relativt till sidornas varierande innehåll. Då de ändå tydligt är rubriker, satte jag dem som h4, nästa rubriknivå efter den sista som används på resten av sidan. Hade jag velat ha underrubriker i footern hade det alltså funkat, samtidigt ser jag footerns information som av mindre vikt än t.ex. artikelrubrikerna. I W3Cs web accessibility tutorials har dock ett annat resonemang gjorts då footer-rubrikerna i deras exempel satts som h2 så som huvudrubrik inom footer-elementet. Jag har å andra sidan inte sett något utförligt om bästa resonemanget för rubriker och har alltså behållit h4 i footern.</p>
+<p class="article-body__text">På sidan för processanalysen hade jag åter ett citatproblem. Den här gången gällande ett faktiskt citat som jag ville ta ur texten och förstora, så som ofta görs i tryckta media. Blockquote verkade som det enda passande, men beskrivningarna av användningen gjorde mig osäker då en distinktion som görs mellan q-taggen och blockquote, är att blockquote ska vara ett längre citat (HTML Dog). Jag började således fundera på vad som är tillräckligt långt. I slutändan tror jag att förvirringen beror på skillnaden mellan webbmediet och tryckt media. I tidskrifter kan ett dylikt citat användas främst för att lätta upp en längre text visuellt, samt att ge läsaren lockande smakprov, medan html som är innehåll och inte utseende, fokuserar på innehållsmässig funktion så att den tryckta motsvarigheten kanske hade varit att ta fram en särskilt koncis och kanske faktarik snutt ur en längre text, något som närmar sig en faktaruta (även om det inte måste vara det). Det slutade i vilket fall med att jag använde blockquote.</p>
+<p class="article-body__text">Under h4-elementen i footern, liksom på navigationen och i processanalysens sidhuvud har jag använt onumrerade listor. Jag är inte säker på om detta är bästa valet i alla fall, men efter ett semantiskt resonemang anser jag att det fungerar. Det handlar aldrig om längre texter utan om likvärdig information summerad i kortare formuleringar. Något som jag analogt hade listat, alltså borde det kunna stå som listor i html.</p>
+<div class="references">
+<h3 class="references__heading">Källhänvisning</h3>
+<p class="references__item">Andrew, R. (2018-02-05). <span class="references__title">Using Media Queries For Responsive Design in 2018</span>. [Elektronisk]. Tillgänglig: <a class="references__link" href="https://www.smashingmagazine.com/2018/02/media-queries-responsive-design-2018/" title="Smashing Magazine">https://www.smashingmagazine.com/2018/02/media-queries-responsive-design-2018/</a> [2020-03-26].</p>
+<p class="references__item">Bernhardsson, P. (2014-10-27). <span class="references__title">Semantisk HTML</span>. [Video online]. Tillgänglig: <a class="references__link" href="https://youtu.be/qzQiCtQjShk" title="Youtube">https://youtu.be/qzQiCtQjShk</a> [2020-03-20].</p>
+<p class="references__item">Coyier, C. (2013-01-01). <span class="references__title">What Makes For a Semantic Class Name?</span> [Elektronisk]. Tillgänglig: <a class="references__link" href="https://css-tricks.com/semantic-class-names/" title="CSS-Tricks">https://css-tricks.com/semantic-class-names/</a> [2020-03-26].</p>
+<p class="references__item">Lennartz, S. (2008-06-12). <span class="references__title">Block Quotes and Pull Quotes: Examples and Good Practices</span>. [Elektronisk]. Tillgänglig: <a class="references__link" href="https://www.smashingmagazine.com/2008/06/block-quotes-and-pull-quotes-examples-and-good-practices/" title="Smashing Magazine">https://www.smashingmagazine.com/2008/06/block-quotes-and-pull-quotes-examples-and-good-practices/</a> [2020-03-27].</p>
+<p class="references__item">MDN web docs. (2020-02-19). <span class="references__title">Document and website structure</span>. [Elektronisk]. Tillgänglig: <a class="references__link" href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure" title="MDN web docs">https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure</a> [2020-03-24].</p>
+<p class="references__item">Ohlsson, C. (2019-10-28). <span class="references__title">Göra sidor responsiva</span>. [Video online]. Tillgänglig: <a class="references__link" href="https://youtu.be/AfLqlvJMJ-0" title="Youtube">https://youtu.be/AfLqlvJMJ-0</a> [2020-03-26].</p>
+<p class="references__item">Tonon, D. (2019-07-17). <span class="references__title">How to Section Your HTML</span>. [Elektronisk]. Tillgänglig: <a class="references__link" href="https://css-tricks.com/how-to-section-your-html/#article-header-id-1" title="CSS-Tricks">https://css-tricks.com/how-to-section-your-html/#article-header-id-1</a> [2020-03-25].</p>
+<p class="references__item">W3C Web Accessibility Initiative. (u.å.). <span class="references__title">Headings • Page Structure • WAI Web Accessibility Tutorials</span>. [Elektronisk]. Tillgänglig: <a class="references__link" href="https://www.w3.org/WAI/tutorials/page-structure/headings/" title="W3C WAI">https://www.w3.org/WAI/tutorials/page-structure/headings/</a> [2020-03-28].</p>
+<p class="references__item">W3schools.com. (u.å.). <span class="references__title">How To Specify Typical Device Breakpoints</span>. [Elektronisk]. Tillgänglig: <a class="references__link" href="https://www.w3schools.com/howto/howto_css_media_query_breakpoints.asp" title="W3schools.com">https://www.w3schools.com/howto/howto_css_media_query_breakpoints.asp</a> [2020-03-27].</p>
+</div>
+</div>
+</main>
+<footer>
+<div class="footer-info">
+<div class="footer-info__resources">
+<h4 class="footer-info__heading">Resurser</h4>
+<ul>
+<li class="footer-info__list">Headerbild hämtad från Unsplash. <br /> Fotograf Pawel Czerwinski.</li>
+<li class="footer-info__list">Övriga bilder från Nasa samt personligt porträtt.</li>
+<li class="footer-info__list">Typsnitt: Lato &amp; Abril Fatface</li>
+</ul>
+</div>
+<div class="footer-info__contact">
+<h4 class="footer-info__heading">Kontakt</h4>
+<ul>
+<li class="footer-info__list">nellie.johnsson@yahoo.se</li>
+<li class="footer-info__list">Tornfalksgatan 215 60 Malmö</li>
+</ul>
+</div>
+<div class="footer-info__goals">
+<h4 class="footer-info__heading">Lärandemål</h4>
+<ul>
+<li class="footer-info__list">Effektiv HTML-strukturering</li>
+<li class="footer-info__list">Flexbox</li>
+<li class="footer-info__list">Javascript</li>
+</ul>
+</div>
+</div>
+</footer>
+</div>
+</body></html>
